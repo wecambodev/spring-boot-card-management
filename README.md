@@ -26,7 +26,7 @@ This exercise is just focused on the REST API and build with spring boot and myb
 
 ## Database
 
-###Tables 
+### Tables 
  There are three tables for storage data.
  
  * User  
@@ -77,7 +77,7 @@ COMMIT;
  ```
  
  
-###Data For test 
+### Data For test 
 
 
 
