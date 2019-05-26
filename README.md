@@ -78,13 +78,12 @@ This project use MYSQL Database  [download](https://raw.githubusercontent.com/we
 
 * User sample 
 
-    ```sql 
-    
+    ```sql
         INSERT INTO `users` (`id`, `phone_number`, `password`, `role`, `created_at`, `status`) VALUES
         (1, '093883292', '$2a$10$or9jKJtcnRpIjcTj62aczesC99ZFpw4G61zOOTii4HecjbKADb67u', 'consumer', '2019-05-26 12:25:46', '1'),
         (2, '086503225', '$2a$10$ynJXDlrrcz9qLRR4dHtdFeJve9xJ2gDwQsVNcpLfe8BvZ.u/KXIwW', 'consumer', '2019-05-26 12:51:04', '1');
-      
-    ````
+  
+    ```
 
 * Cards Sample 
 
@@ -96,24 +95,21 @@ This project use MYSQL Database  [download](https://raw.githubusercontent.com/we
     (3, 2, '4222 2222 2222 2222 ', 'visa', '2020-02-02', '111', '500', 0, 'Dara Penhchet', 2),
     (4, 2, '3400 0000 0000 009', 'masterCard', '2020-02-02', '999', '500', 1, 'Dara Penhchet', 2);
 
-    ````
+    ```
 
 * Address Sample 
 
-
-```
- 
- INSERT INTO `address` (`id`, `address`, `district`, `city`, `postal_code`, `country`) VALUES
- (1, '61 Preah Monivong Blvd (93)', 'Toul Kork', 'Phnom Penh', '12102', 'Cambodia'),
- (2, 'Mao Tse Toung Boulevard (245)', 'Resey Keo', 'Phnom Penh', '120102', 'Cambodia');
-
- 
- 
- 
- 
- ```
-
-
+    
+     ```sql
+     
+     INSERT INTO `address` (`id`, `address`, `district`, `city`, `postal_code`, `country`) VALUES
+     (1, '61 Preah Monivong Blvd (93)', 'Toul Kork', 'Phnom Penh', '12102', 'Cambodia'),
+     (2, 'Mao Tse Toung Boulevard (245)', 'Resey Keo', 'Phnom Penh', '120102', 'Cambodia');
+    
+    
+     ```
+    
+    
 
 
 ## Frameworks 
