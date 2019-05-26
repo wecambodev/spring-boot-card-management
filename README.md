@@ -113,7 +113,7 @@ This project use MYSQL Database  [download](https://raw.githubusercontent.com/we
     
 
 
-## Frameworks 
+## Frameworks and Libraries 
 
 To complete this  project tasks I use framework like below:   
 
@@ -139,13 +139,13 @@ To complete this  project tasks I use framework like below:
  * Sign Up
 
     ```
-    post: localhost:8080/v1/api/auth/signup
+    post: /v1/api/auth/signup
     ```
 
  * Sign In
 
     ```
-    post:localhost:8080/v1/api/auth/signin
+    post:/v1/api/auth/signin
     ```
 
 
@@ -156,7 +156,7 @@ To complete this  project tasks I use framework like below:
  * Detail information consumer use (````token````)
 
   ```
-    get: localhost:8080/v1/api/consumer/me
+    get: /v1/api/consumer/me
     
   ```
 
