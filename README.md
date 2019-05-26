@@ -186,33 +186,33 @@ To complete this  project tasks I use framework like below:
 * Fetch a list of cards for a specific user
 
     ```
-    get: localhost:8080/v1/api/card/list
+    get: /v1/api/card/list
     
 * Fetch the card details for a specific card
 
     ```
-    get: localhost:8080/v1/api/card/list
+    get: /v1/api/card/list
     
     ```
 
 * Activate the card
-
+        
     ```
-    put: localhost:8080/v1/api/card/activate
+    put: /v1/api/card/activate
     
     ```
     
 * Deactivate the card
 
     ```
-    put: localhost:8080/v1/api/card/deactivate
+    put: /v1/api/card/deactivate
     
     ```
     
 * Change Limit on the card
 
     ```
-    put: localhost:8080/v1/api/card/daily-limit
+    put: /v1/api/card/daily-limit
     
     ```
 
@@ -229,5 +229,8 @@ To complete this  project tasks I use framework like below:
 
 ## Conclusion  
 
-This project setup from scratch  and have small features features. 
+This project setup from scratch I will improved it when i have more free times. I hope it can help you how to use spring boot + mybastic to build restful API with authenication JWT.
+
+
+Thanks   
 
