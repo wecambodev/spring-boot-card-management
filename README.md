@@ -2,11 +2,9 @@
 
 This sample   task is to create a RESTful micro-service for managing debit / credit cards.
 
-This exercise is just focused on the REST API and build with spring boot and mybatis 
-for version  
+This exercise is just focused on the REST API and build with spring boot and mybatis with MySQL Database.
 
-Find start up here for [Spring boot + Hibernet](https://github.com/wecambodev/cardmanagement)
-
+ 
 ## Features
 
 * SignUp /Signin /Generate Token 
@@ -22,7 +20,67 @@ Find start up here for [Spring boot + Hibernet](https://github.com/wecambodev/ca
 *  1.Consumer Signup and signin to generate ```token```
 *  2.Use ```token``` to create Accounts 
 *  3.Use ```token``` create Cards 
-*  4.use ```token``` to make transactions 
+*  4.use ```token``` to make transactions
+
+
+
+## Database
+
+###Tables 
+ There are three tables for storage data.
+ 
+ * User  
+ 
+ ```
+CREATE TABLE `users` (
+  `id` bigint(20) NOT NULL,
+  `phone_number` varchar(20) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `role` varchar(191) DEFAULT 'user',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` varchar(1) DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ ```
+  
+ 
+ * Card  
+ 
+ ```
+CREATE TABLE `cards` (
+  `id` bigint(20) NOT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  `card_number` varchar(255) DEFAULT NULL,
+  `card_type` varchar(10) DEFAULT '1' COMMENT '1: VISA, 2: MASTER',
+  `expired_date` date DEFAULT NULL,
+  `csv` varchar(3) DEFAULT NULL,
+  `daily_limit` decimal(10,0) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT '1',
+  `holder_name` varchar(191) DEFAULT NULL,
+  `address_id` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ ```
+ 
+ * Address
+ 
+ ```
+CREATE TABLE `address` (
+  `id` int(11) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `district` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `postal_code` varchar(255) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+COMMIT;
+
+ ```
+ 
+ 
+###Data For test 
+
+
+
 
 ## Frameworks 
 
