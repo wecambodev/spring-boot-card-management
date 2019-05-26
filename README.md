@@ -18,7 +18,7 @@ This exercise is just focused on the REST API and build with spring boot and myb
 
 ## Database
 
-This project use MYSQL Database  [download]() or you can find it in resource/database.sql
+This project use MYSQL Database  [download](https://raw.githubusercontent.com/wecambodev/spring-boot-card-management/master/src/main/resources/database.sql) or you can find it in resource/database.sql
 
 ### Tables 
  There are three tables for storage data.
