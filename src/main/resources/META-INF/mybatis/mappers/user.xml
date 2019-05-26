@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mbanq.banksystem.repository.ConsumerRepository">
+
+    <resultMap id="RMUser" type="com.mbanq.banksystem.model.User">
+        <result property="id" column="id"/>
+        <result property="phoneNumber" column="phone_number"/>
+        <result property="password" column="password"/>
+        <result property="role" column="role"/>
+        <result property="createdAt" column="created_at"/>
+        <result property="status" column="status"/>
+    </resultMap>
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO users(phone_number, password, role)
+        VALUES(
+          #{phoneNumber}
+          , #{password}
+          , #{role}
+        )
+    </insert>
+
+    <select id="findAll" resultMap="RMUser">
+        SELECT id
+          , phone_number
+          , password
+          , role
+          , created_at
+          , status
+        FROM users
+    </select>
+
+    <select id="findById" resultMap="RMUser">
+        SELECT id
+        , phone_number
+        , password
+        , role
+        , created_at
+        , status
+        FROM users
+        WHERE id = #{id}
+    </select>
+
+    <select id="existsByPhoneNumber" resultType="java.lang.Boolean">
+        SELECT
+          count(id) as total_phone,
+          phone_number
+
+        FROM users
+        WHERE phone_number = #{phoneNumber}
+    </select>
+
+    <select id="findByPhoneNumber" resultMap="RMUser">
+        SELECT id
+        , phone_number
+        , password
+        , role
+        , created_at
+        , status
+        FROM users
+        WHERE phone_number = #{phoneNumber}
+    </select>
+</mapper>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mbanq.banksystem.repository.AddressRepository">
+
+    <resultMap id="RMAddress" type="com.mbanq.banksystem.model.Address">
+
+        <result property="id" column="id"/>
+        <result property="address" column="address"/>
+        <result property="district" column="district"/>
+        <result property="city" column="city"/>
+        <result property="postalCode" column="postal_code"/>
+        <result property="country" column="country"/>
+
+    </resultMap>
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO
+          address(
+              address,
+              district,
+              city,
+              postal_code,
+              country
+          )
+        VALUES(
+            #{address},
+            #{district},
+            #{city},
+            #{postalCode},
+            #{country}
+        )
+    </insert>
+
+    <select id="findById" resultMap="RMAddress">
+        SELECT
+          id,
+          address,
+          district,
+          city,
+          postal_code,
+          country
+        FROM
+          address
+        WHERE
+          id = #{id}
+    </select>
+
+
+</mapper>

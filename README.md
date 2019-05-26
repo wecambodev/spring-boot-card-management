@@ -15,14 +15,6 @@ This exercise is just focused on the REST API and build with spring boot and myb
 * Change the daily limit on the card
 
 
-## Application Workflow Diagram
-
-*  1.Consumer Signup and signin to generate ```token```
-*  2.Use ```token``` to create Accounts 
-*  3.Use ```token``` create Cards 
-*  4.use ```token``` to make transactions
-
-
 
 ## Database
 
@@ -213,8 +205,10 @@ To complete this  project tasks I use framework like below:
 
     ```
     put: /v1/api/card/daily-limit
-    
+     
     ```
+    
+    
 
 
 

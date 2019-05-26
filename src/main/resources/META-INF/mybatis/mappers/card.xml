@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mbanq.banksystem.repository.CardRepository">
+
+    <resultMap id="RMCard" type="com.mbanq.banksystem.model.Card">
+        <result property="id" column="id"/>
+        <result property="cardNumber" column="card_number"/>
+        <result property="holderName" column="holder_name"/>
+        <result property="cardType" column="card_type"/>
+        <result property="expiredDate" column="expired_date"/>
+        <result property="csv" column="csv"/>
+        <result property="dailyLimit" column="daily_limit"/>
+        <result property="status" column="status"/>
+        <association property="address" column="address_id" javaType="com.mbanq.banksystem.model.Address" select="com.mbanq.banksystem.repository.AddressRepository.findById" />
+        <association property="consumer" column="user_id" javaType="com.mbanq.banksystem.model.User" select="com.mbanq.banksystem.repository.ConsumerRepository.findById" />
+    </resultMap>
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO
+          cards(
+          user_id,
+          address_id,
+          card_number,
+          holder_name,
+          card_type,
+          expired_date,
+          csv,
+          daily_limit
+          )
+        VALUES(
+          #{consumer.id},
+          #{address.id},
+          #{cardNumber},
+          #{holderName},
+          #{cardType},
+          #{expiredDate},
+          #{csv},
+          #{dailyLimit}
+        )
+    </insert>
+
+
+    <select id="findAllActiveByConsumerId" resultMap="RMCard">
+        SELECT
+            id,
+            user_id,
+            address_id,
+            card_number,
+            holder_name,
+            card_type,
+            expired_date,
+            csv,
+            daily_limit,
+            status
+        FROM
+            cards
+        WHERE user_id = #{consumer.id}
+        AND status = 1
+    </select>
+
+    <select id="findActiveById" resultMap="RMCard">
+        SELECT
+            id,
+            user_id,
+            address_id,
+            card_number,
+            holder_name,
+            card_type,
+            expired_date,
+            csv,
+            daily_limit,
+            status
+        FROM
+            cards
+        WHERE id = #{id}
+            AND status = 1
+    </select>
+
+    <select id="findById" resultMap="RMCard">
+        SELECT
+            id,
+            user_id,
+            address_id,
+            card_number,
+            holder_name,
+            card_type,
+            expired_date,
+            csv,
+            daily_limit,
+            status
+        FROM
+           cards
+        WHERE id = #{id}
+    </select>
+
+
+    <update id="activate">
+        UPDATE
+            cards
+        SET
+          status=1
+        WHERE
+              id = #{id}
+    </update>
+
+    <update id="deactivate">
+        UPDATE
+            cards
+        SET
+            status=0
+        WHERE
+            id = #{id}
+    </update>
+
+    <update id="updateDailyLimit">
+        UPDATE
+            cards
+        SET
+            daily_limit=#{dailyLimit}
+        WHERE id = #{id}
+    </update>
+
+</mapper>
