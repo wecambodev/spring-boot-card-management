@@ -72,20 +72,21 @@ This project use MYSQL Database  [download](https://raw.githubusercontent.com/we
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
     
      ```
- 
- 
+     
+     
+     
 ### Data For test 
 
-* User sample 
+ * User sample 
 
     ```sql
-        INSERT INTO `users` (`id`, `phone_number`, `password`, `role`, `created_at`, `status`) VALUES
-        (1, '093883292', '$2a$10$or9jKJtcnRpIjcTj62aczesC99ZFpw4G61zOOTii4HecjbKADb67u', 'consumer', '2019-05-26 12:25:46', '1'),
-        (2, '086503225', '$2a$10$ynJXDlrrcz9qLRR4dHtdFeJve9xJ2gDwQsVNcpLfe8BvZ.u/KXIwW', 'consumer', '2019-05-26 12:51:04', '1');
+    INSERT INTO `users` (`id`, `phone_number`, `password`, `role`, `created_at`, `status`) VALUES
+    (1, '093883292', '$2a$10$or9jKJtcnRpIjcTj62aczesC99ZFpw4G61zOOTii4HecjbKADb67u', 'consumer', '2019-05-26 12:25:46', '1'),
+    (2, '086503225', '$2a$10$ynJXDlrrcz9qLRR4dHtdFeJve9xJ2gDwQsVNcpLfe8BvZ.u/KXIwW', 'consumer', '2019-05-26 12:51:04', '1');
   
     ```
 
-* Cards Sample 
+ * Cards Sample 
 
     ```sql
     
@@ -97,7 +98,7 @@ This project use MYSQL Database  [download](https://raw.githubusercontent.com/we
 
     ```
 
-* Address Sample 
+ * Address Sample 
 
     
      ```sql
@@ -116,18 +117,18 @@ This project use MYSQL Database  [download](https://raw.githubusercontent.com/we
 
 To complete this  project tasks I use framework like below:   
 
-* Spring Boot [2.1.5](https://spring.io/projects/spring-boot)
-* Mybatis + Spring Boot    [2.0.1](http://www.mybatis.org/spring-boot-starter/) 
-* Springfox Swagger2  [2.4.0](https://springfox.github.io/springfox/docs/current/)
-* JWT   [2.4.0](https://github.com/jwtk/jjwt)
-* Lombok   [1.18.8](https://projectlombok.org/features/all)
-* Git client
+ * Spring Boot [2.1.5](https://spring.io/projects/spring-boot)
+ * Mybatis + Spring Boot    [2.0.1](http://www.mybatis.org/spring-boot-starter/) 
+ * Springfox Swagger2  [2.4.0](https://springfox.github.io/springfox/docs/current/)
+ * JWT   [2.4.0](https://github.com/jwtk/jjwt)
+ * Lombok   [1.18.8](https://projectlombok.org/features/all)
+ * Git client
 
 
 
 ## API Documentation 
 
-* Swagger HTML Interface For easy understand how to use API
+ * Swagger HTML Interface For easy understand how to use API
     ```
      http://localhost:8080/swagger-ui.html
     ```
@@ -135,13 +136,13 @@ To complete this  project tasks I use framework like below:
 
 ### Authenication 
 
-* Sign Up
+ * Sign Up
 
     ```
     post: localhost:8080/v1/api/auth/signup
     ```
 
-* Sign In
+ * Sign In
 
     ```
     post:localhost:8080/v1/api/auth/signin
@@ -152,7 +153,7 @@ To complete this  project tasks I use framework like below:
 
 ### Consumer 
 
-* Detail information consumer use (````token````)
+ * Detail information consumer use (````token````)
 
   ```
     get: localhost:8080/v1/api/consumer/me
@@ -163,33 +164,33 @@ To complete this  project tasks I use framework like below:
 ### Card 
 
 
-* Fetch a list of cards for a specific user
+ * Fetch a list of cards for a specific user
 
     ```
     get: /v1/api/card/list
     
-* Fetch the card details for a specific card
+ * Fetch the card details for a specific card
 
     ```
     get: /v1/api/card/list
     
     ```
 
-* Activate the card
+ * Activate the card
         
     ```
     put: /v1/api/card/activate
     
     ```
     
-* Deactivate the card
+ * Deactivate the card
 
     ```
     put: /v1/api/card/deactivate
     
     ```
     
-* Change Limit on the card
+ * Change Limit on the card
 
     ```
     put: /v1/api/card/daily-limit
