@@ -26,6 +26,8 @@ This exercise is just focused on the REST API and build with spring boot and myb
 
 ## Database
 
+This project use MYSQL Database  [download]() or you can find it in resource/database.sql
+
 ### Tables 
  There are three tables for storage data.
  
