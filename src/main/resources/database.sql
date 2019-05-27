@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 26, 2019 at 04:49 PM
+-- Generation Time: May 27, 2019 at 06:53 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `card-management`
+-- Database: `bank-cards`
 --
 
 -- --------------------------------------------------------
@@ -42,8 +42,9 @@ CREATE TABLE `address` (
 --
 
 INSERT INTO `address` (`id`, `address`, `district`, `city`, `postal_code`, `country`) VALUES
-(1, '61 Preah Monivong Blvd (93)', 'Toul Kork', 'Phnom Penh', '12102', 'Cambodia'),
-(2, 'Mao Tse Toung Boulevard (245)', 'Resey Keo', 'Phnom Penh', '120102', 'Cambodia');
+  (1, '61 Preah Monivong Blvd (93)', 'Toul Kork', 'Phnom Penh', '12102', 'Cambodia'),
+  (2, 'Mao Tse Toung Boulevard (245)', 'Resey Keo', 'Phnom Penh', '120102', 'Cambodia'),
+  (3, '#145, Preah Norodom Blvd. Corner Louis Em St., Phum 5', 'Songkat beng keng kong 1', 'Phnom Penh', '122203', 'Cambodia');
 
 -- --------------------------------------------------------
 
@@ -69,10 +70,11 @@ CREATE TABLE `cards` (
 --
 
 INSERT INTO `cards` (`id`, `user_id`, `card_number`, `card_type`, `expired_date`, `csv`, `daily_limit`, `status`, `holder_name`, `address_id`) VALUES
-(1, 1, '4111 1111 1111 1111', 'visa', '2020-01-01', '222', '1000', 1, 'Phuong Phally', 1),
-(2, 1, '5500 0000 0000 0004', 'masterCard', '2020-01-01', '111', '1000', 1, 'Phuong Phally', 1),
-(3, 2, '4222 2222 2222 2222 ', 'visa', '2020-02-02', '111', '500', 0, 'Dara Penhchet', 2),
-(4, 2, '3400 0000 0000 009', 'masterCard', '2020-02-02', '999', '500', 1, 'Dara Penhchet', 2);
+  (1, 1, '4111 1111 1111 1111', 'visa', '2020-01-01', '222', '1000', 1, 'Phuong Phally', 1),
+  (2, 1, '5500 0000 0000 0004', 'masterCard', '2020-01-01', '111', '1000', 1, 'Phuong Phally', 1),
+  (3, 2, '4222 2222 2222 2222 ', 'visa', '2020-02-02', '111', '500', 1, 'Dara Penhchet', 2),
+  (4, 2, '3400 0000 0000 009', 'masterCard', '2020-02-02', '999', '500', 1, 'Dara Penhchet', 2),
+  (5, 3, '3000 0000 0000 04', 'visa', '2020-01-01', '999', '3000', 1, 'Darova', 3);
 
 -- --------------------------------------------------------
 
@@ -94,8 +96,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `phone_number`, `password`, `role`, `created_at`, `status`) VALUES
-(1, '093883292', '$2a$10$or9jKJtcnRpIjcTj62aczesC99ZFpw4G61zOOTii4HecjbKADb67u', 'consumer', '2019-05-26 12:25:46', '1'),
-(2, '086503225', '$2a$10$ynJXDlrrcz9qLRR4dHtdFeJve9xJ2gDwQsVNcpLfe8BvZ.u/KXIwW', 'consumer', '2019-05-26 12:51:04', '1');
+  (1, '093883292', '$2a$10$or9jKJtcnRpIjcTj62aczesC99ZFpw4G61zOOTii4HecjbKADb67u', 'consumer', '2019-05-26 12:25:46', '1'),
+  (2, '086503225', '$2a$10$ynJXDlrrcz9qLRR4dHtdFeJve9xJ2gDwQsVNcpLfe8BvZ.u/KXIwW', 'consumer', '2019-05-26 12:51:04', '1'),
+  (3, '0963612289', '$2a$10$MCBw3tZlo5FL947QY7fxV.ehLuyikr3M2s1fwbez1aERVd5SbfOda', 'consumer', '2019-05-27 02:37:32', '1'),
+  (5, '08199999', '$2a$10$1VrW118gy8UPKFjW2s9ueOoeryU8DooRiN1rf3lPXzP/.m4hftjZO', 'consumer', '2019-05-27 04:01:40', '1');
 
 --
 -- Indexes for dumped tables
@@ -127,19 +131,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `address`
 --
 ALTER TABLE `address`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
