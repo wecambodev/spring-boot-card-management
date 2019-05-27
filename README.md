@@ -1,6 +1,6 @@
 # Card Management
 
-This sample   task is to create a RESTful micro-service for managing debit / credit cards.
+This is sample task to create a RESTful micro-service for managing debit / credit cards.
 
 This exercise is just focused on the REST API and build with spring boot and mybatis with MySQL Database.
 
@@ -122,7 +122,6 @@ To complete this  project tasks I use framework like below:
  * Springfox Swagger2  [2.4.0](https://springfox.github.io/springfox/docs/current/)
  * JWT   [2.4.0](https://github.com/jwtk/jjwt)
  * Lombok   [1.18.8](https://projectlombok.org/features/all)
- * Git client
 
 
 
@@ -172,7 +171,7 @@ To complete this  project tasks I use framework like below:
  * Fetch the card details for a specific card
 
     ```
-    get: /v1/api/card/list
+    get: /v1/api/card/detail
     
     ```
 
@@ -206,13 +205,14 @@ To complete this  project tasks I use framework like below:
 
 
 
-## references
+## References
+
 
 
 
 ## Conclusion  
 
-This project setup from scratch I will improved it when i have more free times. I hope it can help you how to use spring boot + mybastic to build restful API with authenication JWT.
+This project setup from scratch I will improved it when i have more free times. I hope it can help you how to use spring boot + mybastic to build restful API with Authorization ```Bearer``` JWT.
 
 
 Thanks   
