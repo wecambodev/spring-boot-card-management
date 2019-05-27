@@ -212,7 +212,7 @@ To complete this  project tasks I use framework like below:
 
 ## Conclusion  
 
-This project setup from scratch I will improved it when i have more free times. I hope it can help you how to use spring boot + mybastic to build restful API with Authorization ```Bearer``` JWT.
+This project setup from scratch I will improved it when i have more free times. I hope it can help you how to use spring boot + Mybatis to build restful API with Authorization ```Bearer``` JWT.
 
 
 Thanks   
