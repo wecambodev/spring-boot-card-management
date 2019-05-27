@@ -13,24 +13,6 @@
 
     </resultMap>
 
-    <insert id="save" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
-        INSERT INTO
-          address(
-              address,
-              district,
-              city,
-              postal_code,
-              country
-          )
-        VALUES(
-            #{address},
-            #{district},
-            #{city},
-            #{postalCode},
-            #{country}
-        )
-    </insert>
-
     <select id="findById" resultMap="RMAddress">
         SELECT
           id,
@@ -44,6 +26,5 @@
         WHERE
           id = #{id}
     </select>
-
 
 </mapper>
