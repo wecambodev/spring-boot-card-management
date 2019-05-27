@@ -7,7 +7,7 @@ This exercise is just focused on the REST API and build with spring boot and myb
  
 ## Features
 
-* SignUp /Signin /Generate Token 
+* SignUp/ Signin /Generate JWT Token 
 * Fetch a list of cards for a specific user
 * Fetch the card details for a specific card
 * Activate a card
@@ -18,7 +18,14 @@ This exercise is just focused on the REST API and build with spring boot and myb
 
 ## Database
 
+
 This project use MYSQL Database and sample database was include [download](https://raw.githubusercontent.com/wecambodev/spring-boot-card-management/master/src/main/resources/database.sql) it or you can find it in resource/database.sql
+
+* Import to your Database and change url below 
+
+```
+    spring.datasource.url=jdbc:mysql://127.0.0.1:3306/bank-cards
+```
     
 
 ## Frameworks and Libraries 
@@ -35,7 +42,7 @@ To complete this  project tasks I use framework like below:
 
 ## API Documentation 
 
- * Swagger HTML Interface For easy understand how to use API
+ * Swagger Generate HTML Interface For easy understand how to use API
     ```
      http://localhost:8080/swagger-ui.html
     ```
@@ -104,13 +111,7 @@ To complete this  project tasks I use framework like below:
      
     ```
     
-    
-
-
-
-
-
-
+   
 
 
 ## Test Case Integration 
