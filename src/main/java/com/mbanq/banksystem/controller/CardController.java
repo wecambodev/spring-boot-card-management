@@ -259,13 +259,11 @@ public class CardController {
         if(existCard !=null) {
             // set new daily limit
             existCard.setDailyLimit(inputCard.getDailyLimit());
-            if(cardService.dailyLimit(existCard)) {
+            if(cardService.changeDailyLimit(existCard)) {
                 HashMap res = new HashMap();
                 res.put("data", existCard);
                 res.put("message", "Change dailyLimit Successful.");
                 res.put("status_code", 200);
-
-                cardService.dailyLimit(existCard);
                 return new ResponseEntity<>(res, HttpStatus.OK);
             }
         }

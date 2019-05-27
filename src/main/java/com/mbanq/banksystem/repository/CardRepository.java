@@ -11,7 +11,7 @@ public interface CardRepository {
     List<Card> findAllActiveByConsumerId(Long consumerId);
     Card findActiveById(Long id);
     Card findById(Long id);
-    boolean dailyLimit(Card card);
+    boolean changeDailyLimit(Card card);
     boolean activate(Long id);
     boolean deactivate(Long id);
 

@@ -87,6 +87,7 @@ public class AuthController {
 
     @PostMapping( value = "/signup")
     @ApiResponses(value = {//
+            @ApiResponse(code = 200, message = "Operation, Signup successful"), //
             @ApiResponse(code = 400, message = "Input invalid, Validation"), //
             @ApiResponse(code = 403, message = "Access denied"), //
             @ApiResponse(code = 422, message = "Username is already in use"), //
@@ -113,11 +114,11 @@ public class AuthController {
                 final String token = jwtTokenUtil.generateToken(userDetails);
 
                 HashMap res = new HashMap();
-                res.put("message", "Singup Success full.");
-                res.put("status_code", 400);
+                res.put("message", "Operation, Signup successful");
+                res.put("status_code", 200);
                 res.put("token", token);
 
-                return new ResponseEntity(res, HttpStatus.BAD_REQUEST);
+                return new ResponseEntity(res, HttpStatus.CREATED);
             }
         }
 

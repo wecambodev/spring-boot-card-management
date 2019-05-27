@@ -112,7 +112,7 @@
             id = #{id}
     </update>
 
-    <update id="updateDailyLimit">
+    <update id="changeDailyLimit">
         UPDATE
             cards
         SET

@@ -24,8 +24,8 @@ public class CardService {
         return cardRepository.findActiveById(id);
     }
 
-    public boolean dailyLimit(Card card) {
-        return cardRepository.dailyLimit(card);
+    public boolean changeDailyLimit(Card card) {
+        return cardRepository.changeDailyLimit(card);
     }
     public boolean activate(Long id) {
         return cardRepository.activate(id);
