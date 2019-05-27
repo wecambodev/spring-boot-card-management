@@ -121,4 +121,7 @@ public class AuthControllerIntegrationTest {
 
         return jsonParser.parseMap(resultString).get("token").toString();
     }
+
+
+
 }

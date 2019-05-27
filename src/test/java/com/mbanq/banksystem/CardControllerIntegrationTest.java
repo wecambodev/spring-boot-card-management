@@ -22,6 +22,22 @@ import org.springframework.web.context.WebApplicationContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ *
+ *  CardControllerIntegrationTest includes
+ *
+ *  1. shouldNotAllowAccessToUnauthenticatedUsers
+ *  2. testListCardByConsumer
+ *  3. testDetailCard
+ *  4. activateShouldBeReturnOK
+ *  5. deactivateShouldBeReturnOK
+ *  6. changeDailyLimitShouldBeReturnOK
+ *
+ *
+ * ***/
+
+
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -43,9 +59,7 @@ public class CardControllerIntegrationTest {
     private static final String UR_CARD_DEACTIVATE = "/v1/api/card/deactivate";
     private static final String URL_CARD_DAILY_LIMIT = "/v1/api/card/daily-limit";
 
-    private static final  Long consumerID = 3L;
     private static final  Long cardID     = 5L;
-
 
     @Before
     public void setUp() {
