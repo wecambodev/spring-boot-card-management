@@ -21,7 +21,7 @@ This exercise is just focused on the REST API and build with spring boot and myb
 
 This project use MYSQL Database and sample database was include [download](https://raw.githubusercontent.com/wecambodev/spring-boot-card-management/master/src/main/resources/database.sql) it or you can find it in resource/database.sql
 
-* Import to your Database and change url below 
+* Import to your Database and change url in ```application.properties``` 
 
 ```
     spring.datasource.url=jdbc:mysql://127.0.0.1:3306/bank-cards
