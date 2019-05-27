@@ -48,14 +48,26 @@ public class AuthController {
     private ModelMapper modelMapper;
 
 
+
+
+    /**
+     *
+     *  Singin
+     *  by phone number and password
+     *
+     *
+     * **/
     @PostMapping( value = "/signin")
-    @ApiResponses(value = {//
-        @ApiResponse(code = 400, message = "Input invalid, Validation"), //
-        @ApiResponse(code = 403, message = "Access denied"), //
-        @ApiResponse(code = 422, message = "PhoneNumber and Password incorrect"), //
+    @ApiResponses(value = {
+
+        @ApiResponse(code = 400, message = "Input invalid, Validation"),
+
+        @ApiResponse(code = 403, message = "Access denied"),
+
+        @ApiResponse(code = 422, message = "PhoneNumber and Password incorrect"),
+
         @ApiResponse(code = 500, message = "Expired or invalid JWT token")
     })
-
     public ResponseEntity<?> signIn(@Valid @RequestBody AuthSignInRequest request, BindingResult result) {
 
         if(result.hasErrors()) {
@@ -85,12 +97,19 @@ public class AuthController {
     }
 
 
+    /**
+     *
+     *  SingUp
+     *  by phone number and  password with role
+     *
+     *
+     * **/
     @PostMapping( value = "/signup")
-    @ApiResponses(value = {//
-            @ApiResponse(code = 200, message = "Operation, Signup successful"), //
-            @ApiResponse(code = 400, message = "Input invalid, Validation"), //
-            @ApiResponse(code = 403, message = "Access denied"), //
-            @ApiResponse(code = 422, message = "Username is already in use"), //
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Operation, Signup successful"),
+            @ApiResponse(code = 400, message = "Input invalid, Validation"),
+            @ApiResponse(code = 403, message = "Access denied"),
+            @ApiResponse(code = 422, message = "Username is already in use"),
             @ApiResponse(code = 500, message = "Expired or invalid JWT token")})
 
     public ResponseEntity<?> signUp(@Valid @RequestBody AuthSignUpRequest request, BindingResult result) {

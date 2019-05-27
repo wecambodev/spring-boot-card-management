@@ -46,10 +46,10 @@ public class CardController {
      * **/
 
     @GetMapping(value = "/list")
-    @ApiResponses(value = {//
-            @ApiResponse(code = 200, message = "Operation, Find list card success."), //
-            @ApiResponse(code = 401, message = "Operation failed, token not provide"), //
-            @ApiResponse(code = 422, message = "Operation failed"), //
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Operation, Find list card success."),
+            @ApiResponse(code = 401, message = "Operation failed, token not provide"),
+            @ApiResponse(code = 422, message = "Operation failed"),
             @ApiResponse(code = 500, message = "Something went wrong.")
     })
 
@@ -89,9 +89,9 @@ public class CardController {
      *
      * **/
     @ApiResponses(value = {//
-            @ApiResponse(code = 200, message = "Operation, Detail of  card success."), //
-            @ApiResponse(code = 401, message = "Operation failed, token not provide"), //
-            @ApiResponse(code = 422, message = "Operation failed"), //
+            @ApiResponse(code = 200, message = "Operation, Detail of  card success."),
+            @ApiResponse(code = 401, message = "Operation failed, token not provide"),
+            @ApiResponse(code = 422, message = "Operation failed"),
             @ApiResponse(code = 500, message = "Something went wrong.")
     })
     @GetMapping(value = "/detail")
@@ -129,8 +129,8 @@ public class CardController {
      * **/
     @PutMapping(value = "/activate")
     @ApiResponses(value = {//
-            @ApiResponse(code = 200, message = "Operation, Activate  success"), //
-            @ApiResponse(code = 400, message = "Input invalid, Validation"), //
+            @ApiResponse(code = 200, message = "Operation, Activate  success"),
+            @ApiResponse(code = 400, message = "Input invalid, Validation"),
             @ApiResponse(code = 422, message = "Input invalid, Can' activate because int already activate "), //
             @ApiResponse(code = 500, message = "Something went wrong.")
     })

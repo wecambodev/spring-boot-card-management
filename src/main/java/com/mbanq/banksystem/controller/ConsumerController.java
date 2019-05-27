@@ -22,7 +22,13 @@ public class ConsumerController {
     private JwtUserDetailsService userDetailsService;
 
 
+    /**
+     *
+     *  Detail of current user login , By jwt token
+     *
+     * **/
     @GetMapping(value = "/me")
+
     public JwtUser getAuthenticatedUser(HttpServletRequest request) {
 
         JwtUser user =  userDetailsService.getUserFromHeaderToken(request);
